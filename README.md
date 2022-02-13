@@ -7,3 +7,7 @@
 2. git管理
 3. 安装flask
 > pipenv install flask
+
+### Hello Flask!
+1. 添加.flaskenv设置环境变量
+2. 添加app.py设置简单视图函数
