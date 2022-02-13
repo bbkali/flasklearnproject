@@ -19,3 +19,9 @@
 ### 静态文件
 1. 新增static目录及图片文件
 2. 引用本地图片并加载css文件style.css
+
+### 数据库
+1. 数据库第三方模块flask_sqlalchemy的导入及连接使用
+2. 数据模型的建立User、Movie类定义
+3. 建立自定义命令initdb初始化数据库
+4. 定义forge自定义命令生成虚拟数据
