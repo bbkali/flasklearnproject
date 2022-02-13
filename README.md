@@ -11,3 +11,11 @@
 ### Hello Flask!
 1. 添加.flaskenv设置环境变量
 2. 添加app.py设置简单视图函数
+
+### 模板
+1. 添加了Templates目录及index.html文件
+2. 视图函数使用render_template传入虚拟函数
+
+### 静态文件
+1. 新增static目录及图片文件
+2. 引用本地图片并加载css文件style.css

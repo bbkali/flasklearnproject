@@ -11,7 +11,7 @@ from flask import Flask, escape, render_template
 
 app = Flask(__name__)
 
-name = 'Grey Li'
+name = 'Learn Flask'
 movies = [
     {'title': 'My Neighbor Totoro', 'year': '1988'},
     {'title': 'Dead Poets Society', 'year': '1989'},
