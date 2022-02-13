@@ -79,9 +79,22 @@ def forge():
     click.echo('虚拟数据生成完毕！')
 
 
+@app.errorhandler(404)  # 传入要处理的错误代码
+def page_not_found(e):  # 接受异常对象作为参数
+    user = User.query.first()
+    return render_template('404.html', user=user), 404  # 返回模板和状态码
+
+
+@app.context_processor
+def inject_user():  # 函数名可以随意修改
+    user = User.query.first()
+    return dict(user=user)  # 需要返回字典，等同于 return {'user': user}
+
+
 @app.route('/')
 def index():
-    return render_template('index.html', name=name, movies=movies)
+    movies = Movie.query.all()
+    return render_template('index.html', movies=movies)
 
 
 @app.route('/user/<name>')

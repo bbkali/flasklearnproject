@@ -25,3 +25,8 @@
 2. 数据模型的建立User、Movie类定义
 3. 建立自定义命令initdb初始化数据库
 4. 定义forge自定义命令生成虚拟数据
+
+### 模板优化
+1. 在新增base.html基类中添加导航栏和并在index.html中引用
+2. 新增404.html且引用基类
+3. 模板上下文处理使用@app.context_processor进行注册
