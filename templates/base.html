@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{name}}'s watchlist</title>
+    <title>{{user.username}}'s Flasklearnproject</title>
     <link rel="ico" href="{{url_for('static',filename='images/favicon.ico')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css">
 </head>
@@ -16,12 +16,19 @@
     <div class="alert">{{ message }}</div>
     {% endfor %}
     <h2>
-        <img class="avatar" alt="Avatar" src="{{ url_for('static', filename='images/avatar.png') }}"> {{name}}'s watchlist
+        <img class="avatar" alt="Avatar" src="{{ url_for('static', filename='images/avatar.png') }}"> {{user.username}}'s Flasklearnproject
     </h2>
     <nav>
         <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('index') }}">主页</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('settings') }}">设置</a></li>
+            <li><a href="{{ url_for('logout') }}">登出</a></li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">登入</a></li>
+            {% endif %}
         </ul>
+
     </nav>
     {% block content %}{% endblock %}
     <footer>
